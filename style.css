@@ -1,0 +1,38 @@
+body{
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #c8b7a6;
+}
+
+.container{
+    width: 80%;
+    margin: auto ;
+    overflow: hidden;
+}
+
+
+header{
+    background-color: #c29591;
+    color: gold;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #7d94b5 3px solid;
+}
+
+header a{
+    color: #703f37;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+
+}
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
