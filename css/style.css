@@ -11,7 +11,12 @@ body{
     overflow: hidden;
 }
 .button_1{
-    
+    height: 38px;
+    background: wheat;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #703f37;
 }
 h1{
     color: azure;
