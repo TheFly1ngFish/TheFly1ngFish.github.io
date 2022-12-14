@@ -112,9 +112,9 @@ header a:hover{
     width: 30%;
     padding: 20px;
 }
-/* #boxes .box img{
-    
-} */
+#boxes .box img{
+    width: 80%;
+}
 footer{
     padding: 20px;
     margin-top: 20px;
