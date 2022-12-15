@@ -115,6 +115,15 @@ header a:hover{
 #boxes .box img{
     width: 80%;
 }
+aside#sidebar{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+article#main-col{
+    float: left;
+    width: 65%;
+}
 footer{
     padding: 20px;
     margin-top: 20px;
@@ -122,3 +131,11 @@ footer{
     background-color:beige;
     text-align: center;
 }
+.dark{
+    padding: 15px;
+    background: #c29591;
+    color:whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
