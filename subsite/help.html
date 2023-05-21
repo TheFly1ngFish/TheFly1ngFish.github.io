@@ -1,66 +1,291 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewpoint" content="width=device-width" >
-        <title>Hypixel Skyblock Money making Methods 2 | Welcome</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    
-    <body>
-       <header>
-           <div class="container">
-               <div id="branding">
-                   <h1><span class="highlight"> Hypixel </span> Skyblock site 1 </h1>
-               </div>
-               <nav>
-                   <ul>
-                       <li ><a href="/index.html">Home</a></li>
-                       <li><a href="/TCarries.html">Carries</a></li>
-                       <li><a href="/Projects.html">Valorant</a></li>
-                       <li><a href="/Workout.html">Projects</a></li>
-                       <li class="current"><a href="help2.html">Subsite 1 </a></li>
-                       <li><a href="help.html">subsite 2</a></li>
-                   </ul>
-               </nav>
-           </div>
-       </header>
-       <section id="showcase">
-           <div class="container">
-               <h1> Hypixel update</h1>
-               <p></p>
-           </div>
-        </section>
-    <section id="newsletter">
-        <div class="container">
-        <h1> Hypixel Money Making Methods  </h1>
-            <form>
-            <input type="email" placeholder="Enter Minecraft Username">
-            <button type="submit" class="button_1">drop</button>
-            </form>
-        </div>
-    </section>
-    <section id="boxes">
-        <div class="container">
-        <div class="box">
-            <img src="https://staticassets.hypixel.net/news/5e66ec4be8f68.sb%200%207%207.png" width="400" height="250">
-            <h3> Hypixel Skyblock bazaar fliping </h3>
-            <p>Hypixel have a very diverse economy with many ways to make money Bazaar fliping is one of the fastest ways to earn your first million.</p>
-            </div>
-            <div class="box">
-              <img src="https://hypixel.net/attachments/1650920420562-png.2969781/" width="400" height="250">
-              <h3> Hypixel Skyblock Auction fliping </h3>
-              <p>Auctions are created when you set up items that you don't need or seek for money, also being able to purchase and sell items to or from other people on the market</p>
-            </div> 
-              <div class="box">
-                <img src="https://hypixel.net/attachments/sb_banner-png.1893692/" width="400" height="250"> 
-                <h4> Hypixel Slayers </h4>
-                <p> Slayers are a okay way to get money it costs about 150 million coins to get slayer lvl 7 for all slayers which is when you start getting profit. </p>
-              </div>
-        </div>
-    </section>
-    <footer>
-        <p>Hypixel Skyblock ℗ This is copy write my dude </p>
-    </footer>
-    
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hypixel Skyblock Money making Methods 2 | Welcome</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    #tetris {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight">Hypixel</span> Skyblock site 1</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/TCarries.html">Carries</a></li>
+          <li><a href="/Projects.html">Valorant</a></li>
+          <li><a href="/Workout.html">Projects</a></li>
+          <li class="current"><a href="help2.html">Subsite 1</a></li>
+          <li><a href="help.html">Subsite 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="showcase">
+    <div class="container">
+      <h1>Hypixel update</h1>
+      <p></p>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="container">
+      <h1>Hypixel Money Making Methods</h1>
+      <form>
+        <input type="email" placeholder="Enter Minecraft Username">
+        <button type="submit" class="button_1">Drop</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="boxes">
+    <div class="container">
+      <div class="box">
+        <img src="https://staticassets.hypixel.net/news/5e66ec4be8f68.sb%200%207%207.png" width="400" height="250">
+        <h3>Hypixel Skyblock Bazaar Flipping</h3>
+        <p>Hypixel has a very diverse economy with many ways to make money. Bazaar flipping is one of the fastest ways to earn your first million.</p>
+      </div>
+      <div class="box">
+        <img src="https://hypixel.net/attachments/1650920420562-png.2969781/" width="400" height="250">
+        <h3>Hypixel Skyblock Auction Flipping</h3>
+        <p>Auctions are created when you set up items that you don't need or seek for money, also being able to purchase and sell items to or from other people on the market.</p>
+      </div>
+      <div class="box">
+        <img src="https://hypixel.net/attachments/sb_banner-png.1893692/" width="400" height="250">
+        <h4>Hypixel Slayers</h4>
+        <p>Slayers are an okay way to get money. It costs about 150 million coins to get Slayer Level 7 for all Slayers, which is when you start getting profit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tetris">
+    <div class="container">
+      <canvas id="tetris-canvas" width="240" height="480"></canvas>
+    </div>
+  </section>
+
+  <footer>
+    <p>Hypixel Skyblock ℗ This is copyright my dude</p>
+  </footer>
+
+  <script>
+    // Tetris grid dimensions
+const gridWidth = 10;
+const gridHeight = 20;
+
+// DOM elements
+const gridContainer = document.getElementById('grid-container');
+const scoreDisplay = document.getElementById('score');
+const gameOverDisplay = document.getElementById('game-over');
+
+// Create the Tetris grid
+const grid = [];
+for (let row = 0; row < gridHeight; row++) {
+  grid[row] = Array(gridWidth).fill(0);
+}
+
+// Define the Tetriminos
+const tetriminos = [
+  [[1, 1, 1, 1]],           // I
+  [[1, 1], [1, 1]],         // O
+  [[1, 1, 1], [0, 1, 0]],   // T
+  [[1, 1, 0], [0, 1, 1]],   // Z
+  [[0, 1, 1], [1, 1, 0]],   // S
+  [[1, 1, 1], [0, 0, 1]],   // L
+  [[1, 1, 1], [1, 0, 0]]    // J
+];
+
+// Tetrimino colors
+const tetriminoColors = [
+  'cyan', 'yellow', 'purple', 'red', 'green', 'orange', 'blue'
+];
+
+// Current Tetrimino properties
+let tetrimino = null;
+let tetriminoRow = 0;
+let tetriminoCol = 0;
+let tetriminoColor = '';
+
+// Game state
+let score = 0;
+let isGameOver = false;
+
+// Create a new Tetrimino
+function createTetrimino() {
+  const randomIndex = Math.floor(Math.random() * tetriminos.length);
+  const newTetrimino = tetriminos[randomIndex];
+  const newTetriminoColor = tetriminoColors[randomIndex];
+  const newTetriminoRow = 0;
+  const newTetriminoCol = Math.floor((gridWidth - newTetrimino[0].length) / 2);
+  return {
+    tetrimino: newTetrimino,
+    tetriminoRow: newTetriminoRow,
+    tetriminoCol: newTetriminoCol,
+    tetriminoColor: newTetriminoColor
+  };
+}
+
+// Check if the current Tetrimino collides with the grid or other blocks
+function isCollision() {
+  for (let row = 0; row < tetrimino.tetrimino.length; row++) {
+    for (let col = 0; col < tetrimino.tetrimino[row].length; col++) {
+      if (
+        tetrimino.tetrimino[row][col] &&
+        (tetriminoRow + row >= gridHeight ||
+          tetriminoCol + col < 0 ||
+          tetriminoCol + col >= gridWidth ||
+          grid[tetriminoRow + row][tetriminoCol + col])
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+// Place the current Tetrimino on the grid
+function placeTetrimino() {
+  for (let row = 0; row < tetrimino.tetrimino.length; row++) {
+    for (let col = 0; col < tetrimino.tetrimino[row].length; col++) {
+      if (tetrimino.tetrimino[row][col]) {
+        grid[tetriminoRow + row][tetriminoCol + col] = tetriminoColor;
+      }
+    }
+  }
+}
+
+// Clear completed rows
+function clearRows() {
+  for (let row = gridHeight - 1; row >= 0; row--) {
+    if (grid[row].every(cell => cell !== 0)) {
+      grid.splice(row, 1);
+      grid.unshift(Array(gridWidth).fill(0));
+      score += 10;
+    }
+  }
+}
+
+// Update the grid display
+function updateGridDisplay() {
+  gridContainer.innerHTML = '';
+  for (let row = 0; row < grid.length; row++) {
+    for (let col = 0; col < grid[row].length; col++) {
+      const cell = document.createElement('div');
+      cell.className = grid[row][col] ? 'cell filled' : 'cell';
+      cell.style.backgroundColor = grid[row][col] || '';
+      gridContainer.appendChild(cell);
+    }
+  }
+}
+
+// Update the score display
+function updateScoreDisplay() {
+  scoreDisplay.textContent = score;
+}
+
+// Update the game over display
+function updateGameOverDisplay() {
+  gameOverDisplay.style.display = isGameOver ? 'block' : 'none';
+}
+
+// Move the Tetrimino down
+function moveDown() {
+  tetriminoRow++;
+  if (isCollision()) {
+    tetriminoRow--;
+    placeTetrimino();
+    clearRows();
+    tetrimino = createTetrimino();
+    if (isCollision()) {
+      isGameOver = true;
+    }
+  }
+}
+
+// Move the Tetrimino left
+function moveLeft() {
+  tetriminoCol--;
+  if (isCollision()) {
+    tetriminoCol++;
+  }
+}
+
+// Move the Tetrimino right
+function moveRight() {
+  tetriminoCol++;
+  if (isCollision()) {
+    tetriminoCol--;
+  }
+}
+
+// Rotate the Tetrimino
+function rotate() {
+  const previousTetrimino = tetrimino.tetrimino;
+  const previousTetriminoRow = tetriminoRow;
+  const previousTetriminoCol = tetriminoCol;
+
+  tetrimino.tetrimino = tetrimino.tetrimino[0].map((_, i) =>
+    tetrimino.tetrimino.map(row => row[i]).reverse()
+  );
+
+  if (isCollision()) {
+    tetrimino.tetrimino = previousTetrimino;
+    tetriminoRow = previousTetriminoRow;
+    tetriminoCol = previousTetriminoCol;
+  }
+}
+
+// Update the game loop
+function update() {
+  moveDown();
+  if (!isGameOver) {
+    updateGridDisplay();
+    updateScoreDisplay();
+    updateGameOverDisplay();
+  }
+}
+
+// Start the game loop
+function startGame() {
+  tetrimino = createTetrimino();
+  updateGridDisplay();
+  updateScoreDisplay();
+  updateGameOverDisplay();
+  setInterval(update, 1000);
+}
+
+// Handle user input
+document.addEventListener('keydown', (event) => {
+  if (!isGameOver) {
+    if (event.code === 'ArrowDown') {
+      moveDown();
+    } else if (event.code === 'ArrowLeft') {
+      moveLeft();
+    } else if (event.code === 'ArrowRight') {
+      moveRight();
+    } else if (event.code === 'ArrowUp') {
+      rotate();
+    }
+    updateGridDisplay();
+  }
+});
+
+// Start the game
+startGame();
+
+  </script>
+</body>
 </html>
