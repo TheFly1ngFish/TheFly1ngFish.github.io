@@ -17,6 +17,28 @@
       padding: 10px;
       text-align: center;
     }
+    nav {
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin-right: 10px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
     section {
       padding: 20px;
       text-align: center;
@@ -54,6 +76,14 @@
 <body>
   <header>
     <h1>Professional HTML Page with Tic Tac Toe</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="help.html">Sub 1</a></li>
+        <li><a href="help2.html">Sub 2</a></li>
+        <li class = "current"><a href="help3.html">Sub 2</a></li>
+      </ul>
+    </nav>
   </header>
   <section>
     <h2>Welcome to Tic Tac Toe!</h2>
@@ -69,6 +99,7 @@
         <div class="cell"></div>
         <div class="cell"></div>
       </div>
+      <button id="restart-btn" style="display: none;">Restart</button>
     </div>
   </section>
   <footer>
@@ -78,17 +109,57 @@
   <script>
     // Tic Tac Toe game script
     const cells = document.querySelectorAll('.cell');
+    const restartButton = document.getElementById('restart-btn');
     let currentPlayer = 'X';
+    let gameActive = true;
+    let moves = 0;
 
     cells.forEach(cell => {
       cell.addEventListener('click', handleCellClick);
     });
 
+    restartButton.addEventListener('click', restartGame);
+
     function handleCellClick() {
-      if (this.textContent === '') {
+      if (gameActive && this.textContent === '') {
         this.textContent = currentPlayer;
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        moves++;
+        if (checkWin(currentPlayer)) {
+          endGame(currentPlayer + ' wins!');
+        } else if (moves === 9) {
+          endGame("It's a draw!");
+        } else {
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
       }
+    }
+
+    function checkWin(player) {
+      const winningCombinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6] // Diagonals
+      ];
+
+      return winningCombinations.some(combination => {
+        return combination.every(index => cells[index].textContent === player);
+      });
+    }
+
+    function endGame(message) {
+      gameActive = false;
+      restartButton.style.display = 'inline';
+      alert(message);
+    }
+
+    function restartGame() {
+      cells.forEach(cell => {
+        cell.textContent = '';
+      });
+      currentPlayer = 'X';
+      gameActive = true;
+      moves = 0;
+      restartButton.style.display = 'none';
     }
   </script>
 </body>
